@@ -81,7 +81,7 @@ class ProductViewDetail extends Component {
     event.preventDefault();
     const { ratingPoint, textRating } = this.state;
     if (!ratingPoint) {
-      return toast.error("Please rate poin before submit");
+      return toast.error("Vui lòng đánh giá poin trước khi gửi");
     }
     const newTextRating = textRating ? textRating : null;
     const data = {
@@ -89,7 +89,7 @@ class ProductViewDetail extends Component {
       content: newTextRating
     };
     if (!token) {
-      return toast.error("Please login before write rating");
+      return toast.error("Vui lòng đăng nhập trước khi viết xếp hạng");
     }
     this.props.add_rating(productId, data, token);
     this.setState({
@@ -101,7 +101,7 @@ class ProductViewDetail extends Component {
   upItem = () => {
     let quantity = this.state.quantity;
     if (quantity >= 5) {
-      return toast.error("You can only purchase up to 5 products");
+      return toast.error("Bạn chỉ có thể mua tối đa 5 sản phẩm");
     }
     this.setState({
       quantity: ++quantity
@@ -111,7 +111,7 @@ class ProductViewDetail extends Component {
   downItem = () => {
     let quantity = this.state.quantity;
     if (quantity <= 1) {
-      return toast.error("You can only min down to 1 product");
+      return toast.error("Bạn chỉ có thể giảm thiểu xuống 1 sản phẩm");
     }
     this.setState({
       quantity: --quantity
@@ -276,7 +276,7 @@ class ProductViewDetail extends Component {
                   </div>
                   <div className="price-box pt-20">
                     <span className="new-price new-price-2">
-                      {formatNumber.format(product.price)}
+                      {formatNumber.format(product.price)} VND/kg
                     </span>
                   </div>
                   <div className="product-desc">

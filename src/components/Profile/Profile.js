@@ -82,10 +82,10 @@ class Profile extends Component {
     event.preventDefault();
     const { password, oldPassword, rePassword } = this.state;
     if (password.length < 6 || password.length > 32) {
-      return toast.error('Password must be 6-32 characters');
+      return toast.error('Mật khẩu phải có 6-32 ký tự');
     }
     if (password !== rePassword) {
-      toast.error('Password does not match');
+      toast.error('Mật khẩu không hợp lệ');
       return
     }
     const data = {
@@ -127,13 +127,13 @@ class Profile extends Component {
   }
    cancelOrder = (id) =>{
     MySwal.fire({
-      title: 'Are you sure?',
-      text: "You won't be able to cancel this!",
+      title: 'Bạn có chắc không?',
+      text: "Bạn sẽ không thể hủy bỏ điều này!",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, Cancel it!'
+      confirmButtonText: 'Có, Hủy bỏ nó!'
     }).then(async (result) => {
       if (result.value) {
         const res = await callApi(`users/order/${id}/cancel`, 'PUT', null, token);
@@ -143,8 +143,8 @@ class Profile extends Component {
           historyBooking: res2.data.results
         })
         Swal.fire(
-          'Canceled!',
-          'Your order has been Canceled.',
+          'Đã hủy!',
+          'Đơn đặt hàng của bạn đã bị hủy.',
           'success'
         )
       }
@@ -203,7 +203,7 @@ class Profile extends Component {
                 <img id="output" className="fix-img" src={avatar || 'https://i.ibb.co/NCdx7FF/avatar-Default.png'} alt="not found" />
               </div>
               <span className="btn btn-default btn-file" style={{ color: '#212529' }}>
-                Upload File <input onChange={this.handleChangeImage} type="file" />
+                Tải ảnh lên <input onChange={this.handleChangeImage} type="file" />
               </span>
             </div>
             <div className="col-md-8">
@@ -212,18 +212,18 @@ class Profile extends Component {
                   {name}
                 </h5>
                 <h6>
-                  My favorite is listening to music and play support and watching TV ...
+                Yêu thích của tôi là nghe nhạc, hỗ trợ và xem TV ...
               </h6>
                 <p className="proile-rating"></p>
                 <ul className="nav nav-tabs" style={{ paddingTop: 40 }} id="myTab" role="tablist">
                   <li className="nav-item">
-                    <a className="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                    <a className="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Thông tin</a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Change Password</a>
+                    <a className="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Đổi mật khẩu</a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" id="history-tab" data-toggle="tab" href="#history" role="tab" aria-controls="history" aria-selected="false">History Order</a>
+                    <a className="nav-link" id="history-tab" data-toggle="tab" href="#history" role="tab" aria-controls="history" aria-selected="false">Thứ tự lịch sử</a>
                   </li>
                 </ul>
               </div>
@@ -238,7 +238,7 @@ class Profile extends Component {
                   <form onSubmit={(event) => this.handleSubmit(event)} >
                     <div className="row mt-1">
                       <div className="col-md-6">
-                        <label>Name</label>
+                        <label>Tên</label>
                       </div>
                       <div className="col-md-6">
                         <input name="name" onChange={this.handleChange} value={name} className="form-control form-control-sm" type="text" />
@@ -254,7 +254,7 @@ class Profile extends Component {
                     </div>
                     <div className="row mt-1">
                       <div className="col-md-6">
-                        <label>Address</label>
+                        <label>Địa chỉ</label>
                       </div>
                       <div className="col-md-6">
                         <input onChange={this.handleChange} name="address" value={address} className="form-control form-control-sm" type="text" />
@@ -262,7 +262,7 @@ class Profile extends Component {
                     </div>
                     <div className="row mt-1">
                       <div className="col-md-6">
-                        <label>Phone</label>
+                        <label>Số điện thoại</label>
                       </div>
                       <div className="col-md-6">
                         <input onChange={this.handleChange} name="phone" value={phone} className="form-control form-control-sm" type="text" />
@@ -272,7 +272,7 @@ class Profile extends Component {
                       <div className="col-md-6">
                       </div>
                       <div className="col-md-3">
-                        <button style={{ backgroundColor: '#0b0bed8c', border: '#0b0bed8c' }} type="submit" className="btn btn-primary">Submit</button>
+                        <button style={{ backgroundColor: '#0b0bed8c', border: '#0b0bed8c' }} type="submit" className="btn btn-primary">Gửi</button>
                       </div>
                     </div>
                   </form>

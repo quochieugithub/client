@@ -51,7 +51,7 @@ class HeaderTop extends Component {
                       (!user) ? <Link onClick={()=>this.loadingPage()} to="/login-register" className="fix-link-color language-selector-wrapper"> Đăng nhập </Link> :
                         <div className="dropdown show">
                           <Link to="#" className=" fix-link-color dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Cài đặt
+                            Hồ sơ
                           </Link>
                           <div className="fix-text-item dropdown-menu ht-setting-list " aria-labelledby="dropdownMenuLink">
                             <Link className="fix-text-item dropdown-item" to="/profile">Hồ sơ</Link>

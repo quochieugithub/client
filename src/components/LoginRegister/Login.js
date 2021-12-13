@@ -39,7 +39,7 @@ class Login extends Component {
     //verifi captcha
     if (isVerified) {
       if (password.length < 6 || password.length > 32) {
-        return toast.error('Password must be 6-32 characters');
+        return toast.error('Mật khẩu phải có 6-32 ký tự');
       }
       const user = {
         email,
@@ -49,7 +49,7 @@ class Login extends Component {
       await this.props.loginRequest(user);
       doneLoading();
     } else {
-      return toast.error('Please confirm captcha');
+      return toast.error('Vui lòng xác nhận captcha');
     }
   }
   verifyCallback(res) {

@@ -25,7 +25,7 @@ export default class Contact extends Component {
     const newSubject = subject ? subject : null;
     const newMessage = message ? message : null;
     if(!name || !email) {
-      return toast.error('Error! name and email is required')
+      return toast.error('Lỗi! Tên và Email là bắt buộc')
     }
     const newContact = {
       name,
@@ -35,7 +35,7 @@ export default class Contact extends Component {
     };
     const res = await callApi("contacts", "POST", newContact, null);
     if (res && res.status === 200) {
-      toast.success("Sending contact is successfully");
+      toast.success("Gửi liên hệ thành công");
       this.setState({
         name: "",
         email: "",

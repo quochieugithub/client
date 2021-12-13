@@ -35,12 +35,12 @@ class ShoppingCart extends Component {
                   <table className="table">
                     <thead>
                       <tr>
-                        <th className="li-product-remove">Action</th>
-                        <th className="li-product-thumbnail">Image</th>
-                        <th className="cart-product-name">Product</th>
-                        <th className="li-product-price">Unit Price</th>
-                        <th className="li-product-quantity">Quantity</th>
-                        <th className="li-product-subtotal">Total</th>
+                        <th className="li-product-remove"></th>
+                        <th className="li-product-thumbnail">Ảnh</th>
+                        <th className="cart-product-name">Sản phẩm</th>
+                        <th className="li-product-price">Đơn giá</th>
+                        <th className="li-product-quantity">Số lượng</th>
+                        <th className="li-product-subtotal">Tổng cộng</th>
                       </tr>
                     </thead>
                     <tbody>

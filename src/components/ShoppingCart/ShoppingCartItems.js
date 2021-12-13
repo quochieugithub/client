@@ -12,7 +12,7 @@ class ShoppingCartItems extends Component {
 
   upItem = (item) => {
     if (item.quantity >= 5) {
-      toast.error('You can only purchase up to 5 products')
+      toast.error('Bạn chỉ có thể mua tối đa 5 sản phẩm')
       return
     }
     let newItem = item;
@@ -30,7 +30,7 @@ class ShoppingCartItems extends Component {
 
   removeItem = (item) => {
     this.props.removeItem(item);
-    toast.success('Delete product is successful')
+    toast.success('Xóa sản phẩm thành công')
   }
 
   render() {
@@ -42,7 +42,7 @@ class ShoppingCartItems extends Component {
           <div className="fix-cart"> <img className="fix-img" src={item.image ?  item.image : null} alt="Li's Product" /></div>
         </a></td>
         <td className="li-product-name"><a className="text-dark" href="/">{item.nameProduct}</a></td>
-        <td className="product-subtotal"><span className="amount">{formatNumber.format(item.price)}</span></td>
+        <td className="product-subtotal"><span className="amount">{formatNumber.format(item.price)} VND</span></td>
         <td className="quantity">
           <div className="cart-plus-minus">
             <input onChange={() => { }} className="cart-plus-minus-box" value={this.props.item.quantity || 0} />
@@ -51,7 +51,7 @@ class ShoppingCartItems extends Component {
             <div onClick={() => this.upItem(item)} className="inc qtybutton"><i className="fa fa-angle-up" /></div>
           </div>
         </td>
-        <td className="product-subtotal"><span className="amount">{formatNumber.format(item.price * item.quantity)}</span></td>
+        <td className="product-subtotal"><span className="amount">{formatNumber.format(item.price * item.quantity)} VND</span></td>
       </tr>
     )
   }

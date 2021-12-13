@@ -15,11 +15,11 @@ class ProductFavotire extends Component {
                   <table className="table">
                     <thead>
                       <tr>
-                        <th className="li-product-remove">Action</th>
-                        <th className="li-product-thumbnail">Image</th>
-                        <th className="cart-product-name">Product</th>
-                        <th className="li-product-price">Price</th>
-                        <th className="li-product-subtotal">Buy</th>
+                        <th className="li-product-remove"></th>
+                        <th className="li-product-thumbnail">Ảnh</th>
+                        <th className="cart-product-name">Sản phẩm</th>
+                        <th className="li-product-price">Đơn giá</th>
+                        <th className="li-product-subtotal">Mua</th>
                       </tr>
                     </thead>
                     <tbody>

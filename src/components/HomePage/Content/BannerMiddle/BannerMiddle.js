@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import rau4 from "../../../../images/banner/rau4.jpg";
 import rau2 from "../../../../images/banner/rau2.jpg";
-import rau3 from "../../../../images/banner/rau3.jpg";
+import rau5 from "../../../../images/banner/rau5.jpg";
 
 export default class BannerMiddle extends Component {
   render() {
@@ -35,7 +35,7 @@ export default class BannerMiddle extends Component {
               <div className="single-banner">
                 <Link to="#">
                   
-                  <img src={rau3} alt="Banner3" />
+                  <img src={rau5} alt="Banner3" />
                 </Link>
               </div>
             </div>

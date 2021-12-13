@@ -28,7 +28,7 @@ class ProductItems extends Component {
   
   upItem = (quantity) => {
     if (quantity >= 5) {
-      toast.error('You can only purchase up to 5 products')
+      toast.error('Bạn chỉ có thể mua tối đa 5 sản phẩm')
       return
     }
     this.setState({
@@ -68,7 +68,7 @@ class ProductItems extends Component {
   addItemToFavorite = (id) => {
     startLoading()
     if (!token) {
-      return toast.error('Please login before add product to list favorites')
+      return toast.error('Vui lòng đăng nhập trước khi thêm sản phẩm vào danh sách yêu thích')
     }
     this.props.addFavorite(id, token);
     doneLoading();
@@ -138,7 +138,7 @@ class ProductItems extends Component {
             </div>
             <div className="add-actions">
               <ul className="add-actions-link">
-                <li className="add-cart active"><Link to="#" onClick={() => this.addItemToCart(product)} >Add to cart</Link></li>
+                <li className="add-cart active"><Link to="#" onClick={() => this.addItemToCart(product)} >Thêm vào giỏ</Link></li>
                 <li><Link to="#" title="quick view" className="quick-view-btn" ><i className="fa fa-eye" /></Link></li>
                 {/* <li><Link onClick={(id) => this.getInfoProduct(product.id)} to={`/products/${product.id}`} title="quick view" className="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter99"><i className="fa fa-eye" /></Link></li> */}
                 <li><Link onClick={(id) => this.addItemToFavorite(product.id)} className="links-details" to="#"><i className="fa fa-heart-o" /></Link></li>

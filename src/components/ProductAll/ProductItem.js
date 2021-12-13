@@ -28,7 +28,7 @@ class ProductItem extends Component {
 
   upItem = (quantity) => {
     if (quantity >= 5) {
-      toast.error('You can only purchase up to 5 products')
+      toast.error('Bạn chỉ có thể mua tối đa 5 sản phẩm')
       return
     }
     this.setState({
@@ -64,7 +64,7 @@ class ProductItem extends Component {
   addItemToFavorite = (id) => {
     startLoading()
     if (!token) {
-      return toast.error('Please login before add product to list favorites')
+      return toast.error('Vui lòng đăng nhập trước khi thêm sản phẩm vào danh sách yêu thích')
     }
     this.props.addFavorite(id, token);
     doneLoading();
@@ -129,7 +129,7 @@ class ProductItem extends Component {
               </div>
               <h4><Link className="product_name text-truncate" to={`/products/${product.id}`}>{product.nameProduct}</Link></h4>
               <div className="price-box">
-                <span className="new-price" style={{color: 'red'}}>{formatNumber.format(product.price)}</span>
+                <span className="new-price" style={{color: 'red'}}>{formatNumber.format(product.price)} VND</span>
               </div>
             </div>
             <div className="add-actions">
@@ -182,7 +182,7 @@ class ProductItem extends Component {
                         <div className="single-add-to-cart">
                           <form className="cart-quantity" onSubmit={(event) => this.addItemToCart2(event, getProduct)}>
                             <div className="quantity">
-                              <label>Quantity</label>
+                              <label>Số lượng</label>
                               <div className="cart-plus-minus">
                                 <input type="text"
                                   className="cart-plus-minus-box"
@@ -194,7 +194,7 @@ class ProductItem extends Component {
                                 <div onClick={() => this.upItem(quantity)} className="inc qtybutton"><i className="fa fa-angle-up" /></div>
                               </div>
                             </div>
-                            <button className="add-to-cart" type="submit">Add to cart</button>
+                            <button className="add-to-cart" type="submit">Thêm vào giỏ</button>
                           </form>
                         </div>
                         <div className="product-additional-info pt-25">

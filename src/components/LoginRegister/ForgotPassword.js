@@ -27,10 +27,10 @@ class ForgotPassword extends Component {
     event.preventDefault();
     const { email } = this.state;
     if (email === '') {
-      return toast.error('Email is required');
+      return toast.error('Email cần thiết');
     }
     if (!email.match(/.+@.+/)) {
-      return toast.error('Invalid email');
+      return toast.error('Email không hợp lệ');
     }
     const dataEmail = {
       email

@@ -29,11 +29,11 @@ class Register extends Component {
     event.preventDefault();
     const { name, email, password, repassword } = this.state;
     if (password !== repassword){
-      toast.error('The password is not the same')
+      toast.error('Mật khẩu không giống nhau')
       return 
     }
     if (password.length < 6 || password.length > 32) {
-      toast.error('Password must be 6-32 characters');
+      toast.error('Mật khẩu phải có 6-32 ký tự');
       return
     }
     const newName = (name !== null)  ? name : ''

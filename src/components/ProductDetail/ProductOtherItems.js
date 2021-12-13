@@ -30,7 +30,7 @@ class ProductOtherItems extends Component {
   addItemToFavorite = (id) => {
     startLoading()
     if (!token) {
-      return toast.error('Please login before add product to list favorites')
+      return toast.error('Vui lòng đăng nhập trước khi thêm sản phẩm vào danh sách yêu thích')
     }
     this.props.addFavorite(id, token);
     doneLoading();

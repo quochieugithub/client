@@ -35,13 +35,13 @@ class CheckOut extends Component {
 
   submitOrder = async () => {
     MySwal.fire({
-      title: "Are you sure?",
-      text: "You want to check out now?",
+      title: "Bạn có chắc không?",
+      text: "Bạn muốn kiểm tra ngay bây giờ?",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, Checkout now!",
+      confirmButtonText: "Có, thanh toán ngay bây giờ!",
     }).then(async (result) => {
       const cart = this.props.cartStore;
       if (result.value) {
@@ -50,7 +50,7 @@ class CheckOut extends Component {
         const userId = resData.data.results[0].id;
         const promoTotal = 0;
         if (res.name === "" || res.address === "" || res.phone === "") {
-          return toast.error("Please complete form before checkout");
+          return toast.error("Vui lòng hoàn thành biểu mẫu trước khi thanh toán");
         }
         //GET DATA FOR TABLE ORDER
         let amount = 0;
@@ -132,7 +132,7 @@ class CheckOut extends Component {
           MySwal.fire({
             position: "top-end",
             icon: "success",
-            title: "Success!",
+            title: "Thành công!",
             showConfirmButton: true,
             timer: 15000,
           });
@@ -155,7 +155,7 @@ class CheckOut extends Component {
     const auth = localStorage.getItem("_auth");
     console.log('auth', auth)
     if (!auth) {
-      return toast.error("Missing authentication!");
+      return toast.error("Thiếu xác thực!");
     }
     res = this.billing.current.getBillingState();
     const { provinceData, stateData } = res; //get code
@@ -164,7 +164,7 @@ class CheckOut extends Component {
     const builder = localStorage.getItem("_cart");
     const dataCart = JSON.parse(builder);
     if (res.name === "" || res.address === "" || res.phone === "") {
-      return toast.error("Please complete form before checkout");
+      return toast.error("Vui lòng hoàn thành biểu mẫu trước khi thanh toán");
     }
     let addressProvince;
     if (res.provinces && res.provinces.length) {
@@ -269,21 +269,21 @@ class CheckOut extends Component {
             <div className="col-6">
               <div className="container">
                 <ul className="progressbar">
-                  <li className="active">login</li>
+                  <li className="active">Đăng Nhập</li>
                   {shippingAddress ? (
-                    <li className="active">SHIPPING ADDRESS</li>
+                    <li className="active">ĐỊA CHỈ GIAO HÀNG</li>
                   ) : (
-                    <li>SHIPPING ADDRESS</li>
+                    <li>ĐỊA CHỈ GIAO HÀNG</li>
                   )}
                   {checkout ? (
-                    <li className="active">CHECKOUT</li>
+                    <li className="active">THỦ TỤC THANH TOÁN</li>
                   ) : (
-                    <li>CHECKOUT</li>
+                    <li>THỦ TỤC THANH TOÁN</li>
                   )}
                   {result ? (
-                    <li className="active">RESULT</li>
+                    <li className="active">KẾT QUẢ</li>
                   ) : (
-                    <li>RESULT</li>
+                    <li>KẾT QUẢ</li>
                   )}
                 </ul>
               </div>
@@ -300,17 +300,16 @@ class CheckOut extends Component {
                       alt="checked"
                       height="70px"
                     />
-                    <h1>Thank You.</h1>
+                    <h1>Cảm ơn.</h1>
                   </div>
                   <div>
-                    <h1>Your order was completed successfully.</h1>
+                    <h1>Đơn đặt hàng của bạn đã được hoàn thành thành công.</h1>
                   </div>
                   <div>
                     <p>
                       <i>
-                        The details of your order have been sent to the email.
-                        Please check your email to check the status of your
-                        order.
+                      Thông tin chi tiết về đơn đặt hàng của bạn đã được gửi đến email. 
+                      Vui lòng kiểm tra email của bạn để kiểm tra tình trạng đơn hàng của bạn.
                       </i>
                     </p>
                   </div>
@@ -335,7 +334,7 @@ class CheckOut extends Component {
                     className="btn btn-primary"
                     style={{ marginTop: -25, marginBottom: 10 }}
                   >
-                    Next Step
+                    Bước tiếp theo
                   </button>
                 ) : null}
               </div>

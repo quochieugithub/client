@@ -17,7 +17,7 @@ class YourOrder extends Component {
 
   render() {
     const { items, order } = this.props;
-    const shippingTotal = 2;
+    const shippingTotal = 5000;
     let count = 0;
     if (items.length > 0) {
       count = items.reduce((sum, item) => {
@@ -27,13 +27,13 @@ class YourOrder extends Component {
     return (
       <div className="col-lg-10 col-12 mb-2" style={{ margin: "auto" }}>
         <div className="your-order">
-          <h3>Your order</h3>
+          <h3>Đơn đặt hàng của bạn</h3>
           <div className="your-order-table table-responsive">
             <table className="table">
               <thead>
                 <tr>
-                  <th className="cart-product-name">Product</th>
-                  <th className="cart-product-total">Total</th>
+                  <th className="cart-product-name">Sản phẩm</th>
+                  <th className="cart-product-total">Tổng cộng</th>
                 </tr>
               </thead>
               <tbody>
@@ -56,7 +56,7 @@ class YourOrder extends Component {
                           </td>
                           <td className="cart-product-total">
                             <span className="amount">
-                              {formatNumber.format(item.quantity * item.price)}
+                              {formatNumber.format(item.quantity * item.price)} VND
                             </span>
                           </td>
                         </tr>
@@ -66,27 +66,27 @@ class YourOrder extends Component {
               </tbody>
               <tfoot>
                 <tr className="cart-subtotal">
-                  <th>Cart Subtotal</th>
+                  <th>Tổng tiền</th>
                   <td>
                     <span className="amount">
-                      {count ? formatNumber.format(count) : 0}
+                      {count ? formatNumber.format(count) : 0} VND
                     </span>
                   </td>
                 </tr>
                 <tr className="cart-subtotal">
-                  <th>Shipping Total</th>
+                  <th>Phí vẫn chuyển</th>
                   <td>
                     <span className="amount">
-                      {shippingTotal ? formatNumber.format(shippingTotal) : 0}
+                      {shippingTotal ? formatNumber.format(shippingTotal) : 0} VND
                     </span>
                   </td>
                 </tr>
                 <tr className="order-total">
-                  <th>Order Total</th>
+                  <th>Tổng đơn đặt hàng</th>
                   <td>
                     <strong>
                       <span className="amount" style={{ color: "red" }}>
-                        {count ? formatNumber.format(count + shippingTotal) : 0}
+                        {count ? formatNumber.format(count + shippingTotal) : 0} VND
                       </span>
                     </strong>
                   </td>
@@ -99,7 +99,7 @@ class YourOrder extends Component {
               onClick={this.props.submitOrder}
               className="order-button-payment"
             >
-              <input type="submit" value="Check out" />
+              <input type="submit" value="Thủ tục thanh toán" />
             </div>
           </div>
           {config.paypal.secretKey ? (

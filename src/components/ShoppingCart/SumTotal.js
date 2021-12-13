@@ -19,14 +19,14 @@ class SumTotal extends Component {
   checkAuthenticate = () => {
     const { user, sumTotal } = this.props;
     if (!sumTotal.length) {
-      return toast.error('Please purchase items before payment');
+      return toast.error('Vui lòng mua hàng trước khi thanh toán');
     }
     if (user) {
       this.setState({
         redirectYourOrder: true
       })
     } else {
-      toast.error('You can login before checkout');
+      toast.error('Bạn có thể đăng nhập trước khi thanh toán');
       this.setState({
         redirectYourLogin: true
       })
@@ -37,7 +37,7 @@ class SumTotal extends Component {
     const { redirectYourOrder, redirectYourLogin } = this.state;
     const { sumTotal } = this.props;
     let amount = 0;
-    let shippingTotal = 2;
+    let shippingTotal = 5000;
     if (sumTotal.length > 0) {
       amount = sumTotal.reduce((sum, item) => {
         return sum += item.quantity * item.price
@@ -52,19 +52,19 @@ class SumTotal extends Component {
     return (
       <div>
         <div className="cart-page-total">
-          <h2>Cart totals</h2>
+          <h2>Tổng số giỏ hàng</h2>
           <ul>
-            <li>Subtotal <span>{amount ? formatNumber.format(amount) : 0}</span></li>
-            <li>Shipping <span>{formatNumber.format(amount ? shippingTotal : 0)}</span></li>
-            <li style={{ color: 'red' }}>Total <span>{amount ? formatNumber.format(amount + shippingTotal) : 0}</span></li>
+            <li>Tổng tiền <span>{amount ? formatNumber.format(amount) : 0} VND</span></li>
+            <li>Phí vận chuyển <span>{formatNumber.format(amount ? shippingTotal : 0)} VND</span></li>
+            <li style={{ color: 'red' }}>Tổng cộng <span>{amount ? formatNumber.format(amount + shippingTotal) : 0} VND</span></li>
           </ul>
-          <button onClick={() => this.checkAuthenticate()} className="fix-text-checkout">Order Now</button>
+          <button onClick={() => this.checkAuthenticate()} className="fix-text-checkout">Đặt hàng ngay</button>
         </div>
         <div className="coupon-all">
           <div className="coupon">
-            <input id="coupon_code" className="input-text" name="coupon_code" placeholder="Code..." type="text" />
+            <input id="coupon_code" className="input-text" name="coupon_code" placeholder="Mã giảm giá..." type="text" />
             <input className="button" name="apply_coupon" type="submit" />
-            <span className="fix-text-discount">Discount Code / Gifts</span>
+            <span className="fix-text-discount">Mã giảm giá / Quà tặng</span>
           </div>
         </div>
       </div>

@@ -33,7 +33,7 @@ class ProductSearchItem extends Component {
 
   upItem = quantity => {
     if (quantity >= 5) {
-      toast.error("You can only purchase up to 5 products");
+      toast.error("Bạn chỉ có thể mua tối đa 5 sản phẩm");
       return;
     }
     this.setState({
@@ -72,7 +72,7 @@ class ProductSearchItem extends Component {
   addItemToFavorite = id => {
     startLoading();
     if (!token) {
-      return toast.error("Please login before add product to list favorites");
+      return toast.error("Vui lòng đăng nhập trước khi thêm sản phẩm vào danh sách yêu thích");
     }
     this.props.addFavorite(id, token);
     doneLoading();
@@ -256,7 +256,7 @@ class ProductSearchItem extends Component {
                               </div>
                             </div>
                             <button className="add-to-cart" type="submit">
-                              Add to cart
+                            Thêm vào giỏ
                             </button>
                           </form>
                         </div>

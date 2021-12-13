@@ -64,11 +64,11 @@ export default class BillDetail extends Component {
       <div className="col-lg-10 col-12" style={{margin: 'auto'}}>
          <form>
          <div className="checkbox-form">
-           <h3>Shipping Address</h3>
+           <h3>Địa chỉ giao hàng</h3>
            <div className="row">
              <div className="col-md-6">
                <div className="country-select clearfix">
-                 <label>Provinces <span className="required">*</span></label>
+                 <label>Tỉnh/Thành <span className="required">*</span></label>
                  <select 
                  onChange={this.handleChangeSelectProvince} 
                  className="nice-select wide" 
@@ -80,13 +80,13 @@ export default class BillDetail extends Component {
                        )
                      }
                      ) : null
-                   }}
+                   }
                  </select>
                </div>
              </div>
              <div className="col-md-6">
                <div className="country-select clearfix">
-                 <label>States <span className="required">*</span></label>
+                 <label>Quận/Huyện <span className="required">*</span></label>
                  <select onChange={this.handleChangeSelectState} className="nice-select wide" name="state" value={stateData} >
                  {
                      (states && states.length) ? states.map((state, index) => {
@@ -95,33 +95,33 @@ export default class BillDetail extends Component {
                        )
                      }
                      ) : null
-                   }}
+                   }
                  </select>
                </div>
              </div>
              <div className="col-md-6">
                <div className="checkout-form-list">
-                 <label>Name <span className="required">*</span></label>
-                 <input onChange={this.handleChange} type="text" name="name" value={name} />
+                 <label>Tên <span className="required">*</span></label>
+                 <input onChange={this.handleChange} placeholder="Họ tên" type="text" name="name" value={name} />
                </div>
              </div>
              <div className="col-md-6">
                <div className="checkout-form-list">
-                 <label>Phone  <span className="required">*</span></label>
-                 <input onChange={this.handleChange} type="text" name="phone" value={phone} />
+                 <label>Số điện thoại <span className="required">*</span></label>
+                 <input onChange={this.handleChange} placeholder="Số điện thoại" type="text" name="phone" value={phone} />
                </div>
              </div>
              <div className="col-md-12">
                <div className="checkout-form-list">
-                 <label>Address <span className="required">*</span></label>
-                 <input onChange={this.handleChange} placeholder="Street address" type="text" name="address" value={address} />
+                 <label>Địa chỉ <span className="required">*</span></label>
+                 <input onChange={this.handleChange} placeholder="Địa chỉ" type="text" name="address" value={address} />
                </div>
              </div>
              <div className="col-md-12">
                <div className="order-notes">
                  <div className="checkout-form-list">
-                   <label>Order Notes</label>
-                   <textarea value={note} onChange={this.handleChange} id="checkout-mess" cols="30" rows="10" name="note" placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
+                   <label>Ghi chú đơn hàng</label>
+                   <textarea value={note} onChange={this.handleChange} id="checkout-mess" cols="30" rows="10" name="note" placeholder="Ghi chú về đơn đặt hàng của bạn, ví dụ: Những lưu ý đặc biệt khi giao hàng."></textarea>
                  </div>
                </div>
              </div>

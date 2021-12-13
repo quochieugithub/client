@@ -32,7 +32,7 @@ class HeaderMiddle extends Component {
   handleClick = () => {
     const { textSearch } = this.state;
     if (textSearch === '' || textSearch === null) {
-      return toast.error('Please input search text ...');
+      return toast.error('Vui lòng nhập văn bản tìm kiếm ...');
     }
     startLoading();
     this.props.searchProduct(textSearch);
@@ -50,7 +50,7 @@ class HeaderMiddle extends Component {
 
   handleFetchFavorites = () => {
     if(!token){
-       return toast.error('Please login before watch list favorites')
+       return toast.error('Vui lòng đăng nhập trước khi xem danh sách yêu thích')
     } else {
       this.props.fetch_productFavorites(token);
     }

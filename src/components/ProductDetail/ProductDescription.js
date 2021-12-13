@@ -116,7 +116,7 @@ class ProductDescription extends Component {
     event.preventDefault();
     const { ratingPoint, textRating } = this.state;
     if (!ratingPoint) {
-      return toast.error("Please rate poin before submit");
+      return toast.error("Vui lòng đánh giá poin trước khi gửi");
     }
     const newTextRating = textRating ? textRating : null;
     const data = {
@@ -124,7 +124,7 @@ class ProductDescription extends Component {
       content: newTextRating
     };
     if (!token) {
-      return toast.error("Please login before write rating");
+      return toast.error("Vui lòng đăng nhập trước khi viết xếp hạng");
     }
     this.props.add_rating(productId, data, token);
     this.setState({
@@ -178,7 +178,7 @@ class ProductDescription extends Component {
           );
         })
       ) : (
-        <h4>This product has no reviews</h4>
+        <h4>Sản phẩm này chưa có đánh giá</h4>
       );
     } else {
       return arrRating && arrRating.length ? (
@@ -223,7 +223,7 @@ class ProductDescription extends Component {
           );
         })
       ) : (
-        <h4>This product has no reviews</h4>
+        <h4>Sản phẩm này chưa có đánh giá</h4>
       );
     }
   }

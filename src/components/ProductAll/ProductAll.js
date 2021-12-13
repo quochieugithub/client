@@ -49,7 +49,7 @@ class ProductAll extends Component {
     let { products } = this.props;
     const { total } = this.state;
     return (
-      <div className="content-wraper pt-60 pb-60">
+      <div className="content-wraper pb-60">
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
@@ -57,7 +57,7 @@ class ProductAll extends Component {
               <div className=" shop-page-banner">
                 
                   <img
-                    src="https://file.hstatic.net/200000189007/file/rau_khc_banner_70debca12e734f5ca2bd3365178c22a7.jpg"
+                    src="http://datla.com.vn/wp-content/uploads/2016/10/banner4.jpg"
                     alt="Li's Static Banner"
                   />
                 

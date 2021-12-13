@@ -7,14 +7,14 @@ class ProductSearch extends Component {
   render() {
     let { products } = this.props;
     return (
-      <div className="content-wraper pt-60 pb-60">
+      <div className="content-wraper pb-60">
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
               {/* Begin Li's Banner Area */}
               <div className="single-banner shop-page-banner">
                 <a href="/">
-                  <img src="https://i.ibb.co/rfh0sf4/2.jpg" alt="Li's Static Banner" />
+                  <img src="http://datla.com.vn/wp-content/uploads/2016/10/banner4.jpg" alt="Li's Static Banner" />
                 </a>
               </div>
               
