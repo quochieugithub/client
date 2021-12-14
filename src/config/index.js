@@ -1,6 +1,6 @@
 export const config = {
   api: {
-    url: "http://localhost:8080/api/v1",
+    url: "http://148.163.56.141:8080/api/v1",
   },
   paypal: {
     secretKey:
