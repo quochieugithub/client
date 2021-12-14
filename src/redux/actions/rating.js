@@ -1,15 +1,29 @@
 import * as Types from '../../constants/ActionType';
 import callApi from '../../utils/apiCaller';
 import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { actShowLoading, actHiddenLoading } from './loading'
 
-export const actFetchRatingsRequest = (productId) => {
-  return async dispatch => {
-    const res = await callApi(`product/${productId}/ratings?orderBy=-createdAt`, 'GET', null);
-    if (res && res.status === 200) {
-      dispatch(actFetchRatings(res.data));
-    }
+export const actFetchRatingsRequest = (token, offset) => {
+  const newOffset = offset === null || offset === undefined ? 0 : offset;
+  const limit = 10;
+  return dispatch => {
+    dispatch(actShowLoading());
+    return new Promise((resolve, reject) => {
+      callApi(`ratings?limit=${limit}&offset=${newOffset}&orderBy=-createdAt`, 'GET', null, token)
+        .then(res => {
+          dispatch(actFetchRatings(res.data.results));
+          resolve(res.data);
+          setTimeout(function(){ dispatch(actHiddenLoading()) }, 200)
+        })
+        .catch(err => {
+          console.log(err);
+          reject(err);
+          setTimeout(function(){ dispatch(actHiddenLoading()) }, 200)
+        });
+    });
   };
-}
+};
 
 export const actFetchRatings = (ratings) => {
   return {
@@ -17,69 +31,101 @@ export const actFetchRatings = (ratings) => {
     ratings
   }
 }
-export const actAddRatingRequest = (productId, rating, token) => {
-  return async dispatch => {
-    const res = await callApi(`product/${productId}/ratings`, 'POST', rating, token);
-    if (res && res.status === 200) {
-      dispatch(actAddRatings(res.data));
-      toast.success('Add rating is success')
+
+export const actFindRatingsRequest = (token, searchText) => {
+  return dispatch => {
+  dispatch(actShowLoading());
+  return new Promise((resolve, reject) => {
+    if (searchText !== undefined && searchText !== null && searchText !== '') {
+      callApi(`ratings?q=${searchText}`, 'GET', null, token)
+      .then(res => {
+        if (res && res.status === 200) { 
+          dispatch(actFindRatings(res.data.results));
+          resolve(res.data);
+          setTimeout(function(){ dispatch(actHiddenLoading()) }, 200);
+        }
+      })
+      .catch(err => {
+        console.log(err);
+        reject(err);
+        setTimeout(function(){ dispatch(actHiddenLoading()) }, 200);
+      });
+    } else {
+      callApi('ratings', 'GET', null, token)
+      .then(res => {
+        if (res && res.status === 200) { 
+          dispatch(actFindRatings(res.data.results));
+          resolve(res.data);
+          setTimeout(function(){ dispatch(actHiddenLoading()) }, 200);
+        }
+      })
+      .catch(err => {
+        console.log(err);
+        reject(err);
+        setTimeout(function(){ dispatch(actHiddenLoading()) }, 200);
+      });
     }
-  };
+  });
+}
 }
 
-export const actAddRatings = (rating) => {
+export const actFindRatings = (ratings) => {
+  return {
+    type: Types.FIND_RATINGS,
+    ratings
+  }
+}
+
+export const actDeleteRatingRequest = (id, token) => {
+  return async dispatch => {
+    await callApi(`ratings/${id}`, 'DELETE', null, token);
+    dispatch(actDeleteRating(id));
+  }
+}
+
+export const actDeleteRating = (id) => {
+  return {
+    type: Types.REMOVE_RATING,
+    id
+  }
+}
+
+export const actAddRatingRequest = (token, data) => {
+  return async dispatch => {
+    const res = await callApi('ratings', 'POST', data, token);
+    if (res && res.status === 200) {
+      toast.success('Add new Rating is success')
+      dispatch(actAddRating(res.data));
+    }
+  }
+}
+
+export const actAddRating = (data) => {
   return {
     type: Types.ADD_RATING,
-    rating
+    data
   }
 }
 
-
-//Favorite
-export const actFetchFavoritesRequest = (token) => {
+export const actGetRatingRequest = (token, id) => {
   return async dispatch => {
-    const res = await callApi('favorites', 'GET', null, token);
+    await callApi(`ratings/${id}`, 'GET', null, token);
+  };
+}
+
+export const actEditRatingRequest = (token, id, data) => {
+  return async dispatch => {
+    const res = await callApi(`ratings/${id}`, 'PUT', data, token);
     if (res && res.status === 200) {
-      dispatch(actFetchFavorites(res.data.results));
+      await dispatch(actEditRating(res.data));
+      toast.success('Edit Rating is success')
     }
-  };
-}
-
-export const actFetchFavorites = (favorites) => {
-  return {
-    type: Types.FETCH_FAVORITES,
-    favorites
   }
 }
 
-export const actAddFavoriteRequest = (productId, token) => {
-  return async dispatch => {
-    const res = await callApi(`favorites/product/${productId}`, 'POST', null, token);
-    if (res && res.status === 200) {
-      toast.success('Add favorite is success')
-      dispatch(actAddFavorite(res.data));
-    }
-  };
-}
-
-export const actAddFavorite = (favorite) => {
+export const actEditRating = (data) => {
   return {
-    type: Types.ADD_FAVORITE,
-    favorite
-  }
-}
-
-export const actDeleteFavoriteRequest = (id, token) => {
-  return async dispatch => {
-    dispatch(actDeleteFavorite(id));
-    callApi(`favorites/${id}`, 'DELETE', null, token);
-    
-  };
-}
-
-export const actDeleteFavorite = (id) => {
-  return {
-    type: Types.REMOVE_FAVORITE,
-    id
+    type: Types.EDIT_RATING,
+    data
   }
 }

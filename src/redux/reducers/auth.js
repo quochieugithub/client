@@ -1,5 +1,5 @@
 import * as Types from './../../constants/ActionType';
-let initialState = [];
+let initialState = null;
 
 const user = (state = initialState, action) => {
     switch (action.type) {
