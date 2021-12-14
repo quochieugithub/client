@@ -6,7 +6,16 @@ export default class ProductFavoritePage extends Component {
     const url = this.props.match.match.url;
     return (
       <div>
-        <LinkHere url={url}></LinkHere>
+      <div className="breadcrumb-area">
+        <div className="container">
+          <div className="breadcrumb-content">
+            <ul>
+              <li><a href="index.html">Trang chủ</a></li>
+              <li className="active">/ Sản phẩm yêu thích</li>
+            </ul>
+          </div>
+        </div>
+      </div>
         <ProductFavotire></ProductFavotire>
       </div>
     )

@@ -6,8 +6,10 @@ import appReducers from './redux/reducers/index';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import 'nprogress/nprogress.css'
 import { ToastContainer } from 'react-toastify';
+import 'nprogress/nprogress.css'
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const store = createStore(appReducers, composeWithDevTools(
   applyMiddleware(thunk)

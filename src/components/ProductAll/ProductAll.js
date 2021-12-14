@@ -57,7 +57,7 @@ class ProductAll extends Component {
               <div className=" shop-page-banner">
                 
                   <img
-                    src="http://datla.com.vn/wp-content/uploads/2016/10/banner4.jpg"
+                    src="../../../../images/product/banner4.jpg"
                     alt="Li's Static Banner"
                   />
                 

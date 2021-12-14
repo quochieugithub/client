@@ -71,8 +71,8 @@ class TrenddingProduct extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    products: state.productsNew,
-  };
+    products: state.productsNew
+  }
 }
 
 const mapDispatchToProps = (dispatch) => {

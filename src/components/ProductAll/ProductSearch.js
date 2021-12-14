@@ -14,7 +14,7 @@ class ProductSearch extends Component {
               {/* Begin Li's Banner Area */}
               <div className="single-banner shop-page-banner">
                 <a href="/">
-                  <img src="http://datla.com.vn/wp-content/uploads/2016/10/banner4.jpg" alt="Li's Static Banner" />
+                  <img src="../../../../images/product/banner4.jpg" alt="Li's Static Banner" />
                 </a>
               </div>
               

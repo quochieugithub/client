@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './style.css';
 import banner2 from '../../../images/banner/food5.jpg';
 import banner1 from '../../../images/banner/food0.jpg';
 import banner3 from "../../../images/banner/food6.jpg";

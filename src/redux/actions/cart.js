@@ -27,7 +27,7 @@ export const actAddCartRequest = (item, quantity) => {
     return async dispatch => {
 
         if(quantity > item.numberAvailable) {
-            return toast.error(`You just can buy maximum ${item.numberAvailable} products `)
+            return toast.error(`Bạn chỉ có thể mua tối đa ${item.numberAvailable} sản phẩm `)
         }
         const newQuantity = quantity ? quantity : 1
         if (localStorage.length === 0) {
@@ -46,19 +46,18 @@ export const actAddCartRequest = (item, quantity) => {
                     cartData.push(item);
                     localStorage.setItem('_cart', JSON.stringify(cartData));
                     dispatch(actAddCart(item));
-                    return toast.success('The product is added to cart');
+                    return toast.success('Sản phẩm được thêm vào giỏ hàng');
                 } else {
                     cartData[index].quantity = cartData[index].quantity + item.quantity;
                     if (cartData[index].quantity > item.numberAvailable){
-                        return toast.error(`Sorry !!! 
-                        We just have ${item.numberAvailable} products available`)
+                        return toast.error(`Xin lỗi !!! Chúng tôi chỉ có ${item.numberAvailable} sản phẩm có sẵn`)
                     }
                     if (cartData[index].quantity > 5) {
-                        return toast.error('You can only buy up to 5 products');                    
+                        return toast.error('Bạn chỉ có thể mua tối đa 5 sản phẩm');                    
                     }
                     localStorage.setItem('_cart', JSON.stringify(cartData));
                     dispatch(actUpdateCart(cartData[index]));
-                    return toast.success('The product is added to cart');
+                    return toast.success('Sản phẩm được thêm vào giỏ hàng');
                 }
             }
         }

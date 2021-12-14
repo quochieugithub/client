@@ -1,155 +1,110 @@
 import React from 'react';
-import DashBoardPage from './pages/DashBoardPage';
-import Login from './components/Login/Login';
-import RolePage from './pages/RolePage';
-import OrderPage from './pages/OrderPage';
-import CategoryPage from './pages/CategoryPage';
+import HomePage from './pages/HomePage';
+import NotFoundPage from './pages/NotFoundPage';
 import ProductPage from './pages/ProductPage';
-import DiscountPage from './pages/DiscountPage';
-import UserPage from './pages/UserPage';
-import ActionRolePage from './pages/ActionRolePage';
-import ActionUserPage from './pages/ActionUserPage';
-import ActionDiscountPage from './pages/ActionDiscountPage';
-import ActionProductPage from './pages/ActionProductPage';
-import ActionCategoryPage from './pages/ActionCategoryPage';
-import ActionOrderPage from './pages/ActionOrderPage';
-import ProducerPage from './pages/ProducerPage';
-import ActionProducerPage from './pages/ActionProducerPage';
-import RatingPage from './pages/RatingPage';
 import ContactPage from './pages/ContactPage';
 import AboutPage from './pages/AboutPage';
+import BlogPage from './pages/BlogPage';
+import ProductDetailPage from './pages/ProductDetailPage';
+import LoginRegisterPage from './pages/LoginRegisterPage';
+import ShoppingCartPage from './pages/ShoppingCartPage';
+import CheckOutPage from './pages/CheckOutPage';
+import ShopCategoryPage from './pages/ShopCategoryPage';
+import SalePage from './pages/SalePage';
+import ForgotPassword from './pages/ForgotPasswordPage';
+import AfterCheckoutPage from './pages/AfterCheckoutPage';
+import ProfilePage from './pages/ProfilePage';
+import ProductFavoritePage from './pages/ProductFavoritePage';
+import ProductSearchPage from './pages/ProductSerachPage';
+
 
 
 const routes = [
   {
     path: '/',
     exact: true,
-    main: () => <DashBoardPage />
+    main: (match) => < HomePage match={match} />
   },
-  {
-    path: '/login',
-    exact: false,
-    main: () => <Login />
-  },
-  {
-    path: '/orders',
-    exact: true,
-    main: () => <OrderPage />
-  },
-  {
-    path: '/categories',
-    exact: true,
-    main: () => <CategoryPage />
-  },
+
   {
     path: '/products',
     exact: true,
-    main: ({ match }) => <ProductPage  match={match}/>
+    main: (match) => < ProductPage match={match}/>
   },
   {
-    path: '/discounts',
+    path: '/products/search',
     exact: true,
-    main: () => <DiscountPage />
+    main: (match) => < ProductSearchPage match={match} />
   },
   {
-    path: '/users',
+    path: '/products/:id',
     exact: true,
-    main: () => <UserPage />
+    main: (match) => < ProductDetailPage match={match} />
   },
   {
-    path: '/roles',
-    exact: true,
-    main: () => <RolePage />
+    path: '/login-register',
+    exact: false,
+    main: (match) => < LoginRegisterPage match={match} />
   },
   {
-    path: '/producers',
-    exact: true,
-    main: () => <ProducerPage />
+    path: '/forgot-password',
+    exact: false,
+    main: (match) => < ForgotPassword  match={match}/>
   },
   {
-    path: '/ratings',
-    exact: true,
-    main: () => <RatingPage />
+    path: '/cart',
+    exact: false,
+    main: (match) => < ShoppingCartPage match={match} />
   },
   {
-    path: '/contacts',
-    exact: true,
-    main: () => <ContactPage />
+    path: '/checkout',
+    exact: false,
+    main: (match) => < CheckOutPage match={match}/>
+  },
+  {
+    path: '/after-checkout',
+    exact: false,
+    main: (match) => < AfterCheckoutPage match={match}/>
+  },
+  {
+    path: '/categories/:id',
+    exact: false,
+    main: (match) => < ShopCategoryPage match={match} />
+  },
+  {
+    path: '/contact',
+    exact: false,
+    main: (match) => < ContactPage match={match}/>
   },
   {
     path: '/about',
+    exact: false,
+    main: (match) => < AboutPage match={match}/>
+  },
+  {
+    path: '/blogs',
+    exact: false,
+    main: (match) => < BlogPage match={match}/>
+  },
+  {
+    path: '/sales',
+    exact: false,
+    main: (match) => < SalePage match={match}/>
+  },
+  {
+    path: '/profile',
+    exact: false,
+    main: (match) => < ProfilePage match={match}/>
+  },
+  {
+    path: '/product-favorites',
+    exact: false,
+    main: (match) => < ProductFavoritePage match={match}/>
+  },
+  {
+    path: '',
     exact: true,
-    main: () => <AboutPage />
-  },
-  {
-    path: '/roles/add',
-    exact: false,
-    main: ({ history }) => <ActionRolePage history={history} />
-  },
-  {
-    path: '/roles/edit/:id',
-    exact: false,
-    main: ({ match, history }) => <ActionRolePage match={match} history={history} />
-  },
-  {
-    path: '/users/add',
-    exact: false,
-    main: ({ history }) => <ActionUserPage history={history} />
-  },
-  {
-    path: '/users/edit/:id',
-    exact: false,
-    main: ({ match, history }) => <ActionUserPage match={match} history={history} />
-  },
-  {
-    path: '/discounts/add',
-    exact: false,
-    main: ({ history }) => <ActionDiscountPage history={history} />
-  },
-  {
-    path: '/discounts/edit/:id',
-    exact: false,
-    main: ({ match, history }) => <ActionDiscountPage match={match} history={history} />
-  },
-  {
-    path: '/products/add',
-    exact: false,
-    main: ({ history }) => <ActionProductPage history={history} />
-  },
-  {
-    path: '/products/edit/:id',
-    exact: false,
-    main: ({ match, history }) => <ActionProductPage match={match} history={history} />
-  },
-  {
-    path: '/categories/add',
-    exact: false,
-    main: ({ history }) => <ActionCategoryPage history={history} />
-  },
-  {
-    path: '/categories/edit/:id',
-    exact: false,
-    main: ({ match, history }) => <ActionCategoryPage match={match} history={history} />
-  },
-  {
-    path: '/orders/add',
-    exact: false,
-    main: ({ history }) => <ActionOrderPage history={history} />
-  },
-  {
-    path: '/orders/edit/:id',
-    exact: false,
-    main: ({ match, history }) => <ActionOrderPage match={match} history={history} />
-  },
-  {
-    path: '/producers/add',
-    exact: false,
-    main: ({ history }) => <ActionProducerPage history={history} />
-  },
-  {
-    path: '/producers/edit/:id',
-    exact: false,
-    main: ({ match, history }) => <ActionProducerPage match={match} history={history} />
+    main: (match) => < NotFoundPage match={match}/>
   }
 
 ]

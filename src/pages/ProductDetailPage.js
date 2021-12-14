@@ -8,7 +8,17 @@ export default class ProductDetailPage extends Component {
     const {id} = this.props.match.match.params
     return (
       <div>
-        <LinkHere url={url}></LinkHere>
+      <div className="breadcrumb-area">
+        <div className="container">
+          <div className="breadcrumb-content">
+            <ul>
+              <li><a href="index.html">Trang chủ</a></li>
+              <li className="active">/ Sản phẩm</li>
+              <li className="active">/ {id}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
         <ProductDetail id={id}></ProductDetail>
       </div>
     )

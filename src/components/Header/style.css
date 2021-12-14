@@ -40,3 +40,14 @@
 .header-middle .col-lg-9{
   padding-top: 30px;
 }
+a.fix-link-color.language-selector-wrapper,
+.phone-wrap {
+  line-height: 55px;
+}
+.ht-menu img#output {
+  width: 32% !important;
+  margin-right: -100px;
+}
+.dropdown-toggle::after{
+  display: none;
+}

@@ -1201,7 +1201,7 @@ textarea:focus {
 /*Header Top*/
 .header-top {
 	background: #f8f9f9;
-	padding: 12px 0;
+	/* padding: 12px 0; */
 	border-bottom: 1px solid #e1e1e1;
 }
 /*Phone Wrap*/
@@ -1623,6 +1623,7 @@ textarea:focus {
 .header-bottom {
 		background: #b7dc36;
 		margin-bottom: 20px;
+		/* margin-top: -10px; */
 }
 .hb-menu > nav > ul {
 		position: relative;

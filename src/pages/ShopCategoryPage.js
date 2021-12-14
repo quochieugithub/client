@@ -9,7 +9,16 @@ export default class ShopCategoryPage extends Component {
     const {id} = this.props.match.match.params
     return (
       <div>
-        <LinkHere url={url}></LinkHere>
+      <div className="breadcrumb-area">
+        <div className="container">
+          <div className="breadcrumb-content">
+            <ul>
+              <li><a href="index.html">Trang chủ</a></li>
+              <li className="active">/ Loại sản phẩm</li>
+            </ul>
+          </div>
+        </div>
+      </div>
         <ShopCategory id={id}></ShopCategory>
       </div>
     )

@@ -272,7 +272,7 @@ class Profile extends Component {
                       <div className="col-md-6">
                       </div>
                       <div className="col-md-3">
-                        <button style={{ backgroundColor: '#0b0bed8c', border: '#0b0bed8c' }} type="submit" className="btn btn-primary">Gửi</button>
+                        <button style={{ backgroundColor: '#0b0bed8c', border: '#0b0bed8c' }} type="submit" className="btn btn-primary">Cập nhật</button>
                       </div>
                     </div>
                   </form>
@@ -281,7 +281,7 @@ class Profile extends Component {
                   <form onSubmit={(event) => this.handleSubmitChangePassword(event)} >
                     <div className="row mb-1">
                       <div className="col-md-3">
-                        <label>Current Password</label>
+                        <label>Mật khẩu hiện tại</label>
                       </div>
                       <div className="col-md-9">
                         <input type="password" name="oldPassword" value={oldPassword} onChange={this.handleChange} className="form-control form-control-sm" />
@@ -289,7 +289,7 @@ class Profile extends Component {
                     </div>
                     <div className="row mb-1">
                       <div className="col-md-3">
-                        <label>New Password</label>
+                        <label>Mật khẩu mới</label>
                       </div>
                       <div className="col-md-9">
                         <input type="password" name="password" value={password} onChange={this.handleChange} className="form-control form-control-sm" />
@@ -297,7 +297,7 @@ class Profile extends Component {
                     </div>
                     <div className="row">
                       <div className="col-md-3">
-                        <label>Confirm Password</label>
+                        <label>Xác nhận mật khẩu</label>
                       </div>
                       <div className="col-md-9">
                         <input type="password" name="rePassword" value={rePassword} onChange={this.handleChange} className="form-control form-control-sm" />
@@ -307,18 +307,18 @@ class Profile extends Component {
                       <div className="col-md-3">
                       </div>
                       <div className="col-md-3">
-                        <button style={{ backgroundColor: '#0b0bed8c', border: '#0b0bed8c' }} type="submit" className="btn btn-primary">Submit</button>
+                        <button style={{ backgroundColor: '#0b0bed8c', border: '#0b0bed8c' }} type="submit" className="btn btn-primary">Gửi</button>
                       </div>
                     </div>
                   </form>
                 </div>
                 <div className="tab-pane fade" id="history" aria-labelledby="history-tab">
                   <div className="row">
-                    <div className="col-md-1"><b>Code Order</b></div>
-                    <div className="col-md-3"><b>Date Order</b></div>
-                    <div className="col-md-3"><b>Status</b></div>
-                    <div className="col-md-3"><b>Total Amount</b></div>
-                    <div className="col-md-2"><b>Action</b></div>
+                    <div className="col-md-1"><b>Mã đặt hàng</b></div>
+                    <div className="col-md-3"><b>Ngày đặt hàng</b></div>
+                    <div className="col-md-3"><b>Trạng thái</b></div>
+                    <div className="col-md-3"><b>Tổng cộng</b></div>
+                    <div className="col-md-2"><b>Hoạt động</b></div>
                   </div>
                   {
                     historyBooking && historyBooking.length ? historyBooking.map((item, index) => {
