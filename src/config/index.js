@@ -1,4 +1,8 @@
 export const config = {
+  devServer:{
+
+historyApiFallback:true
+}
   api: {
     url: "https://thucphamhoahop.tk/api/v1",
   },
