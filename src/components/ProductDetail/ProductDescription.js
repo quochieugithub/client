@@ -383,7 +383,6 @@ class ProductDescription extends Component {
             >
               <div className="product-description">
                 <span dangerouslySetInnerHTML={{__html: product.description}}></span>
-                {this.showCommentFb()}
               </div>
             </div>
           </div>

@@ -84,7 +84,7 @@ class ProductOtherItems extends Component {
             <div className="add-actions">
               <ul className="add-actions-link">
                 <li className="add-cart active"><Link to="#" onClick={() => this.addItemToCart(product)} >Thêm vào giỏ</Link></li>
-                <li><Link to="#" title="quick view" className="quick-view-btn" ><i className="fa fa-eye" /></Link></li>
+                <li><Link to="#" title="xem" className="quick-view-btn" ><i className="fa fa-eye" /></Link></li>
                 <li><Link onClick={(id) => this.addItemToFavorite(product.id)} className="links-details" to="#"><i className="fa fa-heart-o" /></Link></li>
               </ul>
             </div>

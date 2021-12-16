@@ -1,10 +1,6 @@
 export const config = {
-  devServer:{
-
-historyApiFallback:true
-},
   api: {
-    url: "https://thucphamhoahop.tk/api/v1",
+    url: "http://148.163.56.141:8080/api/v1",
   },
   paypal: {
     secretKey:

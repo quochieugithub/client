@@ -960,7 +960,7 @@ textarea:focus {
 }
 
 .product-details-view-content .product-info h2 {
-  font-size: 18px;
+  font-size: 30px;
   letter-spacing: -.025em;
   line-height: 24px;
   color: #0363cd;
@@ -2616,7 +2616,7 @@ textarea:focus {
 	background: #b7dc36;
 	height: 1px;
 	width: 100%;
-	bottom: -10px;
+	bottom: -1px;
 	left: 0;
 }
 .li-trending-product-menu {
@@ -4654,7 +4654,7 @@ span.required {
 	border-radius: 3px;
 	box-shadow: none;
 	margin-bottom: 30px;
-	padding: 25px 50px 29px;
+	padding: 25px 35px 29px;
 }
 .sidebar-title {
 	border-bottom: 1px solid #e1e1e1;

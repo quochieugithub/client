@@ -78,18 +78,18 @@ class ShopCategory extends Component {
                     </ul>
                   </div>
                   <div className="toolbar-amount">
-                    <span>Showing 1 to 9</span>
+                    <span>Hiển thị từ 1 đến 9</span>
                   </div>
                 </div>
                 <div className="product-select-box">
                   <div className="product-short">
-                    <p>Sort By:</p>
+                    <p>Sắp xếp theo:</p>
                     <select className="nice-select" onChange={(event) => this.handleChangeSelectSort(event, categoryId)} >
-                      <option value="createdAt">All</option>
-                      <option value="nameProduct">Name (A - Z)</option>
-                      <option value="-nameProduct">Name (Z - A)</option>
-                      <option value="price">Price (Low &gt; High)</option>
-                      <option value="-price">Price (High &gt; Low)</option>
+                      <option value="createdAt">Tất cả</option>
+                      <option value="nameProduct">Tên (A - Z)</option>
+                      <option value="-nameProduct">Tên (Z - A)</option>
+                      <option value="price">Giá (Thấp &gt; Cao)</option>
+                      <option value="-price">Giá (Cao &gt; Thấp)</option>
                     </select>
                   </div>
                 </div>
@@ -110,7 +110,7 @@ class ShopCategory extends Component {
                   <div className="paginatoin-area">
                     <div className="row">
                       <div className="col-lg-6 col-md-6">
-                        <p>Showing 1-9</p>
+                        <p>Hiển thị 1 - 9</p>
                       </div>
                       <div className="col-lg-6 col-md-6">
                       <Paginator

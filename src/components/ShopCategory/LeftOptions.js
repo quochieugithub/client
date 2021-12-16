@@ -6,15 +6,15 @@ import { Link } from 'react-router-dom'
 import './style.css'
 let id;
 class LeftOptions extends Component {
-  // constructor(props) {
-  //   super(props)
-  //   this.state = {
-  //     two: 2,
-  //     three: 3,
-  //     four: 4,
-  //     five: 5
-  //   }
-  // }
+  constructor(props) {
+    super(props)
+    this.state = {
+      two: 2,
+      three: 3,
+      four: 4,
+      five: 5
+    }
+  }
   
 
   handleChange = (event) => {
@@ -65,7 +65,7 @@ class LeftOptions extends Component {
           </div>
           <button onClick={() => this.handleProductsProducerAll()} className="btn-clear-all mb-sm-30 mb-xs-30">Xóa hết</button>
           <div className="filter-sub-area">
-            <h5 className="fix-producers filter-sub-titel">Producers</h5>
+            <h5 className="fix-producers filter-sub-titel">Nhà sản xuất</h5>
             <div className="categori-checkbox">
               <form action="/">
                 <ul>
@@ -134,10 +134,10 @@ class LeftOptions extends Component {
             <div className="size-checkbox">
               <form action="/">
                 <ul>
-                  <li><Link to="#" onClick={(price) => this.handleProductsPrice(1.5)}><b>Từ</b> 1 - $50</Link></li>
-                  <li><Link to="#" onClick={(price) => this.handleProductsPrice(5.2)}><b>Từ</b> 50 - $200</Link></li>
-                  <li><Link to="#" onClick={(price) => this.handleProductsPrice(2.1)}><b>Từ</b> 200 - $1000</Link></li>
-                  <li><Link to="#" onClick={(price) => this.handleProductsPrice(1)}><b>Hơn</b> $1000</Link></li>
+                  <li><Link to="#" onClick={(price) => this.handleProductsPrice(1.5)}><b>Từ</b> 10,000 - 100,000 VND</Link></li>
+                  <li><Link to="#" onClick={(price) => this.handleProductsPrice(5.2)}><b>Từ</b> 100,000 - 500,000 VND</Link></li>
+                  <li><Link to="#" onClick={(price) => this.handleProductsPrice(2.1)}><b>Từ</b> 500,000 - 1,000,000 VND</Link></li>
+                  <li><Link to="#" onClick={(price) => this.handleProductsPrice(1)}><b>Hơn</b> 1,000,000 VND</Link></li>
                 </ul>
               </form>
             </div>

@@ -35,16 +35,13 @@ export default class FooterMiddle extends Component {
                   <h3 className="footer-block-title">Sản phẩm</h3>
                   <ul>
                     <li>
-                      <a href="/">Giảm giá</a>
+                      <a href="/products">Sản phẩm mới</a>
                     </li>
                     <li>
-                      <a href="/">Sản phẩm mới</a>
+                      <a href="/products">Sản phẩm nổi bật</a>
                     </li>
                     <li>
-                      <a href="/">Sản phẩm nổi bật</a>
-                    </li>
-                    <li>
-                      <a href="/">Liên hệ</a>
+                      <a href="/contact">Liên hệ</a>
                     </li>
                   </ul>
                 </div>
@@ -56,16 +53,16 @@ export default class FooterMiddle extends Component {
                   <h3 className="footer-block-title">Công ty chúng tôi</h3>
                   <ul>
                     <li>
-                      <a href="/">Giao hàng</a>
+                      <a href="/cart">Giao hàng</a>
                     </li>
                     <li>
-                      <a href="/">Thanh toán</a>
+                      <a href="/cart">Thanh toán</a>
                     </li>
                     <li>
-                      <a href="/">Mua sắm</a>
+                      <a href="/products">Mua sắm</a>
                     </li>
                     <li>
-                      <a href="/">Hỗ trợ 24/7</a>
+                      <a href="/about">Hỗ trợ 24/7</a>
                     </li>
                   </ul>
                 </div>
@@ -133,34 +130,7 @@ export default class FooterMiddle extends Component {
                   </ul>
                 </div>
                 {/* Begin Footer Newsletter Area */}
-                <div className="footer-newsletter">
-                  <h4>Đăng ký cập nhật thông tin</h4>
-                  <form
-                    action="/"
-                    method="post"
-                    id="mc-embedded-subscribe-form"
-                    name="mc-embedded-subscribe-form"
-                    className="footer-subscribe-form validate"
-                    noValidate
-                  >
-                    <div id="mc_embed_signup_scroll">
-                      <div
-                        id="mc-form"
-                        className="mc-form subscribe-form form-group"
-                      >
-                        <input
-                          id="mc-email"
-                          type="email"
-                          autoComplete="off"
-                          placeholder="Email của bạn"
-                        />
-                        <button className="btn" id="mc-submit">
-                          Đăng ký
-                        </button>
-                      </div>
-                    </div>
-                  </form>
-                </div>
+                
                 {/* Footer Newsletter Area End Here */}
               </div>
               {/* Footer Block Area End Here */}

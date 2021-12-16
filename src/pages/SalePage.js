@@ -32,7 +32,7 @@ export default class SalePage extends Component {
                 {/* product-select-box start */}
                 <div className="product-select-box">
                   <div className="product-short">
-                    <p>Sort By:</p>
+                    <p>Sắp xếp theo:</p>
                     <select className="nice-select">
                       <option value="trending">Relevance</option>
                       <option value="sales">Name (A - Z)</option>
@@ -86,7 +86,7 @@ export default class SalePage extends Component {
                               <div className="add-actions">
                                 <ul className="add-actions-link">
                                   <li className="add-cart active"><a href="shopping-cart.html">Add to cart</a></li>
-                                  <li><a href="/" title="quick view" className="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i className="fa fa-eye" /></a></li>
+                                  <li><a href="/" title="xem" className="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i className="fa fa-eye" /></a></li>
                                   <li><a className="links-details" href="wishlist.html"><i className="fa fa-heart-o" /></a></li>
                                 </ul>
                               </div>

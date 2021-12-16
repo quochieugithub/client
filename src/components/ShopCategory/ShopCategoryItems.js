@@ -97,7 +97,7 @@ class ShopCategoryItems extends Component {
             <Link to={`/products/${product.id}`}>
               <img className="fix-img" src={product.image ? product.image : null} alt="eror" />
             </Link>
-            <span className="sticker">New</span>
+            <span className="sticker">Mới</span>
           </div>
           <div className="product_desc">
             <div className="product_desc_info">
@@ -119,14 +119,14 @@ class ShopCategoryItems extends Component {
               </div>
               <h4><Link className="product_name text-truncate" to={`/products/${product.id}`}>{product.nameProduct}</Link></h4>
               <div className="price-box">
-                <span className="new-price">{formatNumber.format(product.price)}</span>
+                <span className="new-price">{formatNumber.format(product.price)} VND</span>
               </div>
             </div>
             <div className="add-actions">
               <ul className="add-actions-link">
                 <li className="add-cart active"><Link to="#" onClick={() => this.addItemToCart(product)} >Thêm vào giỏ</Link>
                 </li>
-                <li><Link onClick={(id) => this.getInfoProduct(product.id)} to={`/products/${product.id}`} title="quick view" className="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter1"><i className="fa fa-eye" /></Link></li>
+                <li><Link onClick={(id) => this.getInfoProduct(product.id)} to={`/products/${product.id}`} title="xem" className="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter1"><i className="fa fa-eye" /></Link></li>
                 <li><Link onClick={(id) => this.addItemToFavorite(product.id)} className="links-details" to="#"><i className="fa fa-heart-o" /></Link></li>
               </ul>
             </div>

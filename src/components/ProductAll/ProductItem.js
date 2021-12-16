@@ -135,8 +135,8 @@ class ProductItem extends Component {
             <div className="add-actions">
               <ul className="add-actions-link">
                 <li className="add-cart active"><Link to="#" onClick={() => this.addItemToCart(product)} >Thêm vào giỏ</Link></li>
-                <li><Link onClick={(id) => this.getInfoProduct(product.id)} to={`/products/${product.id}`} title="quick view" className="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i className="fa fa-eye" /></Link></li>
-                <li><Link onClick={(id) => this.addItemToFavorite(product.id)} className="links-details" to="#" title="favorite" ><i className="fa fa-heart-o" /></Link></li>
+                <li><Link onClick={(id) => this.getInfoProduct(product.id)} to={`/products/${product.id}`} title="xem" className="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i className="fa fa-eye" /></Link></li>
+                <li><Link onClick={(id) => this.addItemToFavorite(product.id)} className="links-details" to="#" title="yêu thích" ><i className="fa fa-heart-o" /></Link></li>
               </ul>
             </div>
           </div>
@@ -169,12 +169,11 @@ class ProductItem extends Component {
                         <div className="rating-box">
                         </div>
                         <div className="price-box pt-20">
-                          <span className="new-price new-price-2">{formatNumber.format(getProduct.price)}</span>
+                          <span className="new-price new-price-2">{formatNumber.format(getProduct.price)} VND</span>
                         </div>
                         <div className="product-desc">
                           <p>
-                            <span>{getProduct.description}
-                            </span>
+                            <span dangerouslySetInnerHTML={{__html: getProduct.description}}></span>
                           </p>
                         </div>
                         <div className="product-variants">

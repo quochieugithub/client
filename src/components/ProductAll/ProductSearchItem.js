@@ -160,7 +160,7 @@ class ProductSearchItem extends Component {
                   <Link
                     onClick={id => this.getInfoProduct(product.id)}
                     to={`/products/${product.id}`}
-                    title="quick view"
+                    title="xem"
                     className="quick-view-btn"
                     data-toggle="modal"
                     data-target="#exampleModalCenter"
@@ -173,7 +173,7 @@ class ProductSearchItem extends Component {
                     onClick={id => this.addItemToFavorite(product.id)}
                     className="links-details"
                     to="#"
-                    title="favorite"
+                    title="yêu thích"
                   >
                     <i className="fa fa-heart-o" />
                   </Link>

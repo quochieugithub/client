@@ -67,7 +67,7 @@ export default class BillDetail extends Component {
            <h3>Địa chỉ giao hàng</h3>
            <div className="row">
              <div className="col-md-6">
-               <div className="country-select clearfix">
+               <div className="country-select ">
                  <label>Tỉnh/Thành <span className="required">*</span></label>
                  <select 
                  onChange={this.handleChangeSelectProvince} 
@@ -85,7 +85,7 @@ export default class BillDetail extends Component {
                </div>
              </div>
              <div className="col-md-6">
-               <div className="country-select clearfix">
+               <div className="country-select ">
                  <label>Quận/Huyện <span className="required">*</span></label>
                  <select onChange={this.handleChangeSelectState} className="nice-select wide" name="state" value={stateData} >
                  {
