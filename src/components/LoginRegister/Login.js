@@ -95,7 +95,7 @@ class Login extends Component {
               </div>
               <div className="col-md-8">
                 <Recaptcha
-                  sitekey="6Le1bacdAAAAAPvVCGZaPyYfC8zJ7IlW-RDeETMN"
+                  sitekey="6Lcd9sEUAAAAAAEj4w9sjBETFKCPXVmcPelQzGjK"
                   render="explicit"
                   verifyCallback={(res) => this.verifyCallback(res)}
                   onloadCallback={this.recaptchaLoaded}
