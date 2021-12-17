@@ -134,9 +134,9 @@ class LeftOptions extends Component {
             <div className="size-checkbox">
               <form action="/">
                 <ul>
-                  <li><Link to="#" onClick={(price) => this.handleProductsPrice(10000.100000)}><b>Từ</b> 10,000 - 100,000 VND</Link></li>
-                  <li><Link to="#" onClick={(price) => this.handleProductsPrice(100000.500000)}><b>Từ</b> 100,000 - 500,000 VND</Link></li>
-                  <li><Link to="#" onClick={(price) => this.handleProductsPrice(500000.1000000)}><b>Từ</b> 500,000 - 1,000,000 VND</Link></li>
+                  <li><Link to="#" onClick={(price) => this.handleProductsPrice(1.5)}><b>Từ</b> 10,000 - 50,000 VND</Link></li>
+                  <li><Link to="#" onClick={(price) => this.handleProductsPrice(5.2)}><b>Từ</b> 50,000 - 200,000 VND</Link></li>
+                  <li><Link to="#" onClick={(price) => this.handleProductsPrice(2.1)}><b>Từ</b> 200,000 - 1,000,000 VND</Link></li>
                   <li><Link to="#" onClick={(price) => this.handleProductsPrice(1)}><b>Hơn</b> 1,000,000 VND</Link></li>
                 </ul>
               </form>

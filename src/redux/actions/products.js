@@ -30,16 +30,16 @@ export const actFetchProductsPriceRequest = (price, id) => {
     let minPrice;
     let maxPrice;
     if (price === 1.5) {
-        minPrice = 10;
-        maxPrice = 50;
+        minPrice = 10000;
+        maxPrice = 50000;
     }
     if (price === 5.2) {
-        minPrice = 50;
-        maxPrice = 200;
+        minPrice = 50000;
+        maxPrice = 200000;
     }
     if (price === 2.1) {
-        minPrice = 200;
-        maxPrice = 1000;
+        minPrice = 200000;
+        maxPrice = 1000000;
     }
     if (price === 1) {
         minPrice = 1000;
