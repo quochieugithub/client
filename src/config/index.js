@@ -1,6 +1,6 @@
 export const config = {
   api: {
-    url: "https://thucphamhoahop.tk/api/v1/",
+    url: "https://thucphamhoahop.tk/api/v1",
   },
   paypal: {
     secretKey:
