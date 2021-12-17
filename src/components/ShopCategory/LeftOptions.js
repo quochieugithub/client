@@ -6,59 +6,59 @@ import { Link } from 'react-router-dom'
 import './style.css'
 let id;
 class LeftOptions extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      two: 2,
-      three: 3,
-      four: 4,
-      five: 5
+    constructor(props) {
+        super(props)
+        this.state = {
+            two: 2,
+            three: 3,
+            four: 4,
+            five: 5
+        }
     }
-  }
-  
-
-  handleChange = (event) => {
-    const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    const name = target.name;
-    this.setState({
-      [name]: value
-    });
-  }
-
-  handleProductsProducer = (id) => {
-    this.props.fetch_products_producer(id).then(res => {
-      this.props.totalProducts(res.total);
-    })
-  }
-
-  handleProductsPrice = (price) => {
-    id = this.props.id;
-    this.props.fetch_products_price(price, id).then(res => {
-      this.props.totalProducts(res.total);
-    })
-  }
-
-  handleProductsPoint = (point) => {
-    id = this.props.id;
-    this.props.fetch_products_point_rating(id, point).then(res => {
-      this.props.totalProducts(res.total);
-    })
-  }
-
-  handleProductsProducerAll = () => {
-    id = this.props.id;
-    this.props.fetch_products(id).then(res => {
-      this.props.totalProducts(res.total);
-    })
-  }
 
 
-  render() {
-    let { producers } = this.props;
-    // const { two, three, four, five } = this.state
-    return (
-      <div className="col-lg-3 order-2 order-lg-1">
+    handleChange = (event) => {
+        const target = event.target;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+        const name = target.name;
+        this.setState({
+            [name]: value
+        });
+    }
+
+    handleProductsProducer = (id) => {
+        this.props.fetch_products_producer(id).then(res => {
+            this.props.totalProducts(res.total);
+        })
+    }
+
+    handleProductsPrice = (price) => {
+        id = this.props.id;
+        this.props.fetch_products_price(price, id).then(res => {
+            this.props.totalProducts(res.total);
+        })
+    }
+
+    handleProductsPoint = (point) => {
+        id = this.props.id;
+        this.props.fetch_products_point_rating(id, point).then(res => {
+            this.props.totalProducts(res.total);
+        })
+    }
+
+    handleProductsProducerAll = () => {
+        id = this.props.id;
+        this.props.fetch_products(id).then(res => {
+            this.props.totalProducts(res.total);
+        })
+    }
+
+
+    render() {
+        let { producers } = this.props;
+        // const { two, three, four, five } = this.state
+        return (
+            <div className="col-lg-3 order-2 order-lg-1">
         <div className="sidebar-categores-box">
           <div className="sidebar-title">
             <h2 className="fix-producers">Lọc bởi</h2>
@@ -145,35 +145,34 @@ class LeftOptions extends Component {
           {/* filter-sub-area end */}
         </div>
       </div>
-    )
-  }
+        )
+    }
 }
 
 
 const mapStateToProps = (state) => {
-  return {
-    products: state.products,
-    producers: state.producers
-  }
+    return {
+        products: state.products,
+        producers: state.producers
+    }
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return {
-    fetch_products: (id) => {
-      return dispatch(actGetProductOfCategoryRequest(id));
-    },
-    fetch_products_producer: (id) => {
-      return dispatch(actFetchProductsOfProducerRequest(id));
-    },
-    fetch_products_price: (price, id) => {
-      return dispatch(actFetchProductsPriceRequest(price, id));
-    },
-    fetch_products_point_rating: (categoryId, point) => {
-      return dispatch(actFetchProductsOfRatingPointRequest(categoryId, point));
+    return {
+        fetch_products: (id) => {
+            return dispatch(actGetProductOfCategoryRequest(id));
+        },
+        fetch_products_producer: (id) => {
+            return dispatch(actFetchProductsOfProducerRequest(id));
+        },
+        fetch_products_price: (price, id) => {
+            return dispatch(actFetchProductsPriceRequest(price, id));
+        },
+        fetch_products_point_rating: (categoryId, point) => {
+            return dispatch(actFetchProductsOfRatingPointRequest(categoryId, point));
+        }
     }
-  }
 }
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(LeftOptions)
-
