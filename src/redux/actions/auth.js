@@ -56,7 +56,7 @@ export const actUpdateMeRequset = (data, token) => {
     return async dispatch => {
         const res = await callApi('users/me', 'PUT', data, token);
         if (res && res.status === 200) {
-            toast.success('Cập nhật người dùng là thành công')
+            toast.success('Cập nhật người dùng thành công')
         }
     };
 }
@@ -69,4 +69,3 @@ export const actChangePasswordMeRequset = (data, token) => {
         }
     };
 }
-

@@ -18,7 +18,6 @@ import ProductFavoritePage from './pages/ProductFavoritePage';
 import ProductSearchPage from './pages/ProductSerachPage';
 
 
-
 const routes = [
   {
     path: '/',
@@ -105,7 +104,8 @@ const routes = [
     path: '',
     exact: true,
     main: (match) => < NotFoundPage match={match}/>
-  }
+  },
+
 
 ]
 

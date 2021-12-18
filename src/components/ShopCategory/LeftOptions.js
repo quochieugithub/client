@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+ import React, { Component } from 'react'
 // import BeautyStars from 'beauty-stars';
 import { actGetProductOfCategoryRequest, actFetchProductsOfProducerRequest, actFetchProductsPriceRequest, actFetchProductsOfRatingPointRequest } from '../../redux/actions/products';
 import { connect } from 'react-redux'

@@ -280,9 +280,6 @@ class ProductViewDetail extends Component {
                     </span>
                   </div>
                   <div className="product-desc">
-                    <p>
-                    <span dangerouslySetInnerHTML={{__html: product.description}}></span>
-                    </p>
                   </div>
                   <div className="single-add-to-cart">
                     <form className="cart-quantity">

@@ -21,7 +21,7 @@ const customStyles = {
   }
 };
 
-const mailUrl = "https://limupa-shop-client.herokuapp.com/products/";
+const mailUrl = "https://thucphamhoahop.tk/api/v1/products/";
 class ProductDescription extends Component {
   constructor(props) {
     super(props);
@@ -35,35 +35,6 @@ class ProductDescription extends Component {
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
-
-  componentDidMount() {
-    token = localStorage.getItem("_auth");
-    window.fbAsyncInit = function() {
-    window.FB.init({
-      appId: "661898660956451",
-      autoLogAppEvents : true,
-      xfbml            : true,
-      version          : 'v5.0'
-     });
-    };
-  
-    // Load the SDK asynchronously
-    (function(d, s, id) {
-     var js,
-       fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) return;
-     js = d.createElement(s);
-     js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   })(document, "script", "facebook-jssdk");
-  }  
-  
-  componentDidUpdate() {
-    if(window.FB) {
-      window.FB.XFBML.parse();
-    }
-   }
 
   openModal() {
     this.setState({ modalIsOpen: true });
