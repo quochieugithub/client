@@ -1,28 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
+    <meta name="description" content="Web site created using create-react-app" />
     <link rel="apple-touch-icon" href="logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <!-- Favicon -->
-    <link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="%PUBLIC_URL%/favicon.ico"
-    />
+    <link rel="shortcut icon" type="image/x-icon" href="%PUBLIC_URL%/favicon.ico" />
     <!-- Material Design Iconic Font-V2.2.0 -->
-    <link
-      rel="stylesheet"
-      href="%PUBLIC_URL%/css/material-design-iconic-font.min.css"
-    />
+    <link rel="stylesheet" href="%PUBLIC_URL%/css/material-design-iconic-font.min.css" />
     <!-- Font Awesome -->
     <link rel="stylesheet" href="%PUBLIC_URL%/css/font-awesome.min.css" />
     <!-- Font Awesome Stars-->
@@ -54,51 +45,54 @@
     <!-- Modernizr js -->
     <script src="%PUBLIC_URL%/js/vendor/modernizr-2.8.3.min.js"></script>
     <title>Hòa Hợp</title>
-  </head>
+    <!-- Google Tag Manager -->
+    <script>
+    (function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start': new Date().getTime(),
+            event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5JCGS7N');
+    </script>
+    <!-- End Google Tag Manager -->
+</head>
 
-  <body>
+<body>
     <!-- Load Facebook SDK for JavaScript -->
     <div id="fb-root"></div>
     <script>
-      window.fbAsyncInit = function () {
+    window.fbAsyncInit = function() {
         FB.init({
-          appId: "661898660956451",
-          autoLogAppEvents: true,
-          xfbml: true,
-          version: "v5.0",
+            appId: "661898660956451",
+            autoLogAppEvents: true,
+            xfbml: true,
+            version: "v5.0",
         });
-      };
+    };
 
-      (function (d, s, id) {
+    (function(d, s, id) {
         var js,
-          fjs = d.getElementsByTagName(s)[0];
+            fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
         js = d.createElement(s);
         js.id = id;
         js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
         fjs.parentNode.insertBefore(js, fjs);
-      })(document, "script", "facebook-jssdk");
+    })(document, "script", "facebook-jssdk");
     </script>
-
     <!-- Your customer chat code -->
-    <div
-      class="fb-customerchat"
-      attribution="setup_tool"
-      page_id="101693008027612"
-      theme_color="#fa3c4c"
-    ></div>
-    <script
-      async
-      defer
-      src="https://connect.facebook.net/en_US/sdk.js"
-    ></script>
+    <div class="fb-customerchat" attribution="setup_tool" page_id="101693008027612" theme_color="#fa3c4c"></div>
+    <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
     <div id="root" className="body-wrapper"></div>
-
-    <script
-      src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
-      async
-      defer
-    ></script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
     <!-- jQuery-V1.12.4 -->
     <script src="%PUBLIC_URL%/js/vendor/jquery-1.12.4.min.js"></script>
     <!-- Popper js -->
@@ -141,5 +135,6 @@
     <!-- <script src="%PUBLIC_URL%/js/scrollUp.min.js"></script> -->
     <!-- Main/Activator js -->
     <script src="%PUBLIC_URL%/js/main.js"></script>
-  </body>
+</body>
+
 </html>
