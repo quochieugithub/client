@@ -165,7 +165,7 @@ export const actFetchProductsNew = (products) => {
     }
 }
 
-//Fetch products category laptop
+
 export const actFetchProductsLaptopRequest = (q) => {
     const offset = q ? q : 0;
     const limit = 8;

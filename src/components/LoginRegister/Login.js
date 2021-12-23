@@ -87,9 +87,6 @@ class Login extends Component {
                   <label htmlFor="remember_me">Ghi nhớ tôi</label>
                 </div>
               </div>
-              <div className="col-md-4 mt-10 mb-20 text-left text-md-right">
-                <Link to="/forgot-password"> Quên mật khẩu?</Link>
-              </div>
               <div className="col-md-4">
                 <button className="register-button mt-0 mb-3">Đăng nhập</button>
               </div>
