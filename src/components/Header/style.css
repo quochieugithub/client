@@ -51,3 +51,7 @@ a.fix-link-color.language-selector-wrapper,
 .dropdown-toggle::after{
   display: none;
 }
+i.fa.fa-user-o {
+  margin-right: 5px;
+  font-size: 18px;
+}

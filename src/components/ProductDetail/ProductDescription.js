@@ -599,9 +599,6 @@ class ProductDescription extends Component {
                 >
                   <i>Xem tất cả xếp hạng</i>
                 </Link>
-                <button className="fix-btn-review btn" onClick={this.openModal}>
-                  Viết đánh giá của bạn!
-                </button>
               </div>
       </div>
     );

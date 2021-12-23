@@ -35,7 +35,8 @@ class HeaderTop extends Component {
       this.setState({
         name: res.data.results[0].name
       });
-      startLoading();
+      // window.location.reload();
+      // startLoading();
     }
   }
 
@@ -55,7 +56,8 @@ class HeaderTop extends Component {
     this.setState({
       [name]: value
     });
-    startLoading();
+    // startLoading();
+      // window.location.reload();
   }
    
   logOut = async () => {
@@ -90,7 +92,7 @@ class HeaderTop extends Component {
                 <ul className="ht-menu">
                   <li>
                     {
-                      (!user) ? <Link onClick={()=>this.loadingPage()} to="/login-register" className="fix-link-color language-selector-wrapper"> Đăng nhập </Link> :
+                      (!user) ? <Link onClick={()=>this.loadingPage()} to="/login-register" className="fix-link-color language-selector-wrapper"><i className="fa fa-user-o" />Đăng nhập </Link> :
                         <div className="dropdown show">
                           <Link to="#" className=" fix-link-color dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {name}

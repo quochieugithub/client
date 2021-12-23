@@ -42,6 +42,7 @@ class CheckOut extends Component {
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
       confirmButtonText: "Có, thanh toán ngay bây giờ!",
+      cancelButtonText: "Hủy",
     }).then(async (result) => {
       const cart = this.props.cartStore;
       if (result.value) {

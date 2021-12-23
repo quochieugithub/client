@@ -56,7 +56,7 @@ class ForgotPassword extends Component {
                   <div className="col-md-12 col-12 mb-20">
                     <label>Địa chỉ Email </label>
                     <input onChange={this.handleChange} value={email} className="mb-0" type="email"
-                      placeholder="Email Address" name='email' />
+                      placeholder="Địa chỉ email" name='email' />
                   </div>
                   <div className="col-md-4">
                     <button onClick={this.sendEmailResetPassword} className="register-button mb-3 fix-button-resetpw">Đặt lại mật khẩu</button>

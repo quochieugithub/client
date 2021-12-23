@@ -10,7 +10,7 @@ export default class ProductSearchPage extends Component {
         <div className="container">
           <div className="breadcrumb-content">
             <ul>
-              <li><a href="index.html">Trang chủ</a></li>
+              <li><a href="/">Trang chủ</a></li>
               <li className="active">/ Sản phẩm</li>
               <li className="active">/ Tìm kiếm</li>
             </ul>

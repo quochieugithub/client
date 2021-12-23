@@ -131,7 +131,7 @@ class ProductItems extends Component {
               </div>
               <h4><Link className="product_name text-truncate" to={`/products/${product.id}`}>{product.nameProduct}</Link></h4>
               <div className="price-box">
-                <span className="new-price new-price-2">{formatNumber.format(product.price)}</span>
+                <span className="new-price new-price-2">{formatNumber.format(product.price)} VND</span>
                 {/* <span className="old-price">{formatNumber.format(product.price * 10 / 100)}</span>
                 <span className="discount-percentage">-10%</span> */}
               </div>

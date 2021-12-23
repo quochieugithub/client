@@ -188,7 +188,7 @@ class ShopCategoryItems extends Component {
                           </form>
                         </div>
                         <div className="product-additional-info pt-25">
-                        <li><Link onClick={(id) => this.addItemToFavorite(product.id)} className="links-details" to="#"><i className="fa fa-heart-o" /> Add to wishlist</Link></li>
+                        <li><Link onClick={(id) => this.addItemToFavorite(product.id)} className="links-details" to="#"><i className="fa fa-heart-o" /> Thêm vào danh sách yêu thích</Link></li>
                           <div className="product-social-sharing pt-25">
                             <ul>
                               <li className="facebook"><a href="/"><i className="fa fa-facebook" />Facebook</a></li>

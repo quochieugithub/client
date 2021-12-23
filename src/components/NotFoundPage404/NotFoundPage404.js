@@ -20,7 +20,7 @@ export default class NotFoundPage404 extends Component {
                   </form>
                 </div>
                 <div className="error-button">
-                  <a href="index.html">Back to home page</a>
+                  <a href="/">Back to home page</a>
                 </div>
               </div>
             </div>

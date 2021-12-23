@@ -127,7 +127,7 @@ class TrenddingProductItems extends Component {
               </div>
               <h4><Link className="product_name text-truncate" to={`/products/${product.id}`}>{product.nameProduct}</Link></h4>
               <div className="price-box">
-                <span className="new-price new-price-2">{formatNumber.format(product.price)}</span>
+                <span className="new-price new-price-2">{formatNumber.format(product.price)} VND</span>
                 {/* <span className="old-price">{formatNumber.format(product.price * 5 / 100)}</span>
                 <span className="discount-percentage">-5%</span> */}
               </div>
@@ -199,7 +199,7 @@ class TrenddingProductItems extends Component {
                           </form>
                         </div>
                         <div className="product-additional-info pt-25">
-                          <a className="wishlist-btn" href="wishlist.html"><i className="fa fa-heart-o" />Add to wishlist</a>
+                          <a className="wishlist-btn" href="wishlist.html"><i className="fa fa-heart-o" />Thêm vào danh sách yêu thích</a>
                           <div className="product-social-sharing pt-25">
                             <ul>
                               <li className="facebook"><a href="/"><i className="fa fa-facebook" />Facebook</a></li>
